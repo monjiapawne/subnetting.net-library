@@ -9,7 +9,8 @@ from .render import highlight
 
 
 def main():
-    with Game(AspClient(session_())) as game:
+    _ = session_()
+    with Game(AspClient()) as game:
         game.auth.login(*credentials())
         # raise SystemExit()
         # print(dict_table(game.account.stats()))

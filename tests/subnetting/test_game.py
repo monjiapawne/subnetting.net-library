@@ -2,17 +2,17 @@ from subnetting.client import Response
 
 
 class FakeClient:
-    def __init__(self, get_text: str = "", get_status_code: int = 200, post_text: str = "", post_status_code: int = 200):
+    def __init__(
+        self, get_resp: str = "", get_status_code: int = 200, post_resp: str = "", post_status_code: int = 200
+    ):
         self.get_resp = {
-            "text": get_text,
+            "text": get_resp,
             "status_code": get_status_code,
         }
-        self.post_resp = (
-            {
-                "text": post_text,
-                "status_code": post_status_code,
-            },
-        )
+        self.post_resp = {
+            "text": post_resp,
+            "status_code": post_status_code,
+        }
 
     def get(self, path: str) -> Response:
         return Response(**self.get_resp)

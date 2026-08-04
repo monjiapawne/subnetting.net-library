@@ -19,7 +19,7 @@ class Client(Protocol):
 
 
 class AspClient:
-    """AspClient connects to www.subnetting.net's asp.net website"""
+    """AspClient connects to https://www.subnetting.net asp.net website"""
 
     _URL_BASE = "https://www.subnetting.net"
 
