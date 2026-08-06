@@ -10,7 +10,7 @@ requires-python = ">=3.13"
 Homepage = "https://github.com/monjiapawne/subnetting"
 
 [project.scripts]
-subnetting = "subnetting.cli.__main__:run"
+subnetting = "cli.__main__:run"
 
 [project.optional-dependencies]
 test = ["pytest>=7.4.4"]
@@ -58,7 +58,7 @@ ignore = [
 
 [tool.ruff.lint.per-file-ignores]
 "tests/*" = ["S101"] 
-"src/subnetting/cli/__main__.py" = ["T201"]
+"src/cli/__main__.py" = ["T201"]
 
 [build-system]
 requires = ["hatchling"]
@@ -66,4 +66,4 @@ build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/subnetting"]
-exclude = ["src/subnetting/cli"]
+exclude = ["src/cli"]

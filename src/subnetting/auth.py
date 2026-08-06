@@ -24,6 +24,9 @@ def requires_login(method):  # noqa: ANN001, ANN201
 
 class AuthAPI(Endpoint):
     def login(self, username: str, password: str) -> None:
+        if not username or not password:
+            raise ValueError("missing username or password")
+
         # 1) Get state
         self._client.get("Account/Login")
 
