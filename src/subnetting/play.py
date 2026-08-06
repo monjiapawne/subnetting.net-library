@@ -22,6 +22,9 @@ class PlayAPI(Endpoint):
             self.round = parse_round(soup)
             self.match = parse_match(soup)
 
+            if self.match.time_remaining <= 0:
+                return
+
             yield self.round
 
     def __enter__(self):
